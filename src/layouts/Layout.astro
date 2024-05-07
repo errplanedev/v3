@@ -1,0 +1,87 @@
+---
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} :: dour.com</title>
+	</head>
+	<body transition:animate="none">
+		<nav style="border-bottom: 2px solid green;">
+			<a href="/" style="background-color: black; color: green; text-decoration: none;">
+				<h1>dour.com</h1>
+			</a>
+			<a href="/">about</a>
+			<a href="/posts">blog</a>
+			<a href="https://freesoftware.club">freesoftware.club</a>
+			<br>
+			<br>
+		</nav>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	body, html {
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	nav h1, nav a {
+		display: inline;
+		padding: 10px;
+	}
+
+	nav a  {
+		margin-left: 10px;
+	}
+
+	body {
+		font-family: 'Times New Roman', serif;
+		width: 900px;
+		margin: auto;
+		padding-top: 20px;
+		padding-left: 40px;
+		background-color: black;
+		color: green;
+		border-left: green 2px solid;
+		border-right: green 2px solid;
+		height: 100vh;
+	}
+
+	::selection {
+		background-color: green;
+		color: black;
+	}
+
+	a {
+		color: black;
+		background-color: green;
+		padding: 5px;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	a::selection {
+		background-color: black;
+		color: green;
+	}
+
+	article a  {
+		background-color: inherit;
+		color: green;
+		padding: 0px;
+	}
+</style>
