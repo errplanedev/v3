@@ -1,5 +1,50 @@
 ---
 const { title } = Astro.props;
+
+const aaa = [
+	{
+		alt: "LateTheIdiot's 88x31 button",
+		image: 'https://latetheidiot.neocities.org/images/88x31/late88x31.png',
+		link: 'https://latetheidiot.neocities.org/'
+	},
+	{
+		alt: 'lily',
+		image: 'https://tauon.dev/images/88x31/lily.png',
+		link: 'https://tauon.dev'
+	},
+	{
+		alt: '8bitosc.net',
+		image: 'https://8bitosc.net/88x31/8bitosc.png',
+		link: 'https://8bitosc.net/'
+	},
+	{
+		alt: '7vector, a very cool creature',
+		image: 'https://7vector.neocities.org/7vector88x31.gif',
+		link: 'https://7vector.neocities.org/'
+	},
+	{
+		alt: 'piracy is cool',
+		image: '/88x31s/piracy.gif',
+	},
+	{
+		alt: 'government bad',
+		image: '/88x31s/anarchy.gif'
+	},
+	{
+		alt: 'a very cool content blocker',
+		image: '/88x31s/ublock.png',
+		link: 'https://ublockorigin.com/'
+	},
+	{
+		alt: 'the world wide web!',
+		image: '/88x31s/www.gif',
+		link: 'https://info.cern.ch/hypertext/WWW/TheProject.html'
+	},
+	{
+		alt: 'DOOM',
+		image: '/88x31s/doomrl.gif'
+	}
+];
 ---
 
 <!doctype html>
@@ -24,6 +69,18 @@ const { title } = Astro.props;
 			<br>
 		</nav>
 		<slot />
+		<br>
+		<br>
+		<footer style="border-top: 2px solid green; text-align: center;">
+			<p>funny counter thing:</p>
+			<iframe src="//incr.easrng.net/badge?key=dour.com" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
+			<p>88x31s</p>
+			{aaa.map((b) => (
+				<a href={b.link} style="background-color: black; color: green; margin-left: 1px; text-decoration: none;" target="_blank">
+					<img src={b.image} alt={b.alt} title={b.alt} style="cursor: url('/pointer.png'), pointer; image-rendering: pixelated;">
+				</a>
+			))}
+		</footer>
 	</body>
 </html>
 <style is:global>
@@ -35,9 +92,11 @@ const { title } = Astro.props;
 
 	* {
 		box-sizing: border-box;
+		cursor: url('/cursor.png'), default;
 	}
 
 	nav h1, nav a {
+		cursor: url('/pointer.png'), pointer;
 		display: inline;
 		padding: 10px;
 	}
@@ -65,6 +124,7 @@ const { title } = Astro.props;
 	}
 
 	a {
+		cursor: url('/pointer.png'), pointer;
 		color: black;
 		background-color: green;
 		padding: 5px;
