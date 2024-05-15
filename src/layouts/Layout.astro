@@ -84,6 +84,11 @@ const aaa = [
 	</body>
 </html>
 <style is:global>
+	@font-face {
+		font-family: 'ibm_vga';
+		src: url('/PxPlus_IBM_VGA8.ttf');
+	}
+
 	body, html {
 		margin: 0;
 		padding: 0;
@@ -93,6 +98,7 @@ const aaa = [
 	* {
 		box-sizing: border-box;
 		cursor: url('/cursor.png'), default;
+		font-weight: 400 !important;
 	}
 
 	nav h1, nav a {
@@ -106,7 +112,7 @@ const aaa = [
 	}
 
 	body {
-		font-family: 'Times New Roman', serif;
+		font-family: 'ibm_vga', serif;
 		width: 900px;
 		margin: auto;
 		padding-top: 20px;
